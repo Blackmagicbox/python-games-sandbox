@@ -33,3 +33,5 @@ print(hello,world)
 
 scrambled = ''.join(list(hello)+list(world))
 print(scrambled)
+
+# Follow up on Strings and Collections
