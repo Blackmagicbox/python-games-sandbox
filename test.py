@@ -34,4 +34,12 @@ print(hello,world)
 scrambled = ''.join(list(hello)+list(world))
 print(scrambled)
 
-# Follow up on Strings and Collections
+# Dictionary
+my_dict = {'name':'John', 'age':25, 'job':'Programmer'}
+print(tuple(my_dict))
+print(len(my_dict))
+print(my_dict.items())
+print(tuple(my_dict.values()))
+print(my_dict.get('name'))
+print(my_dict['name'])
+
