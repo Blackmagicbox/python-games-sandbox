@@ -1,6 +1,22 @@
+import copy
+
+BOARD_COORDS = {
+    'A': 0,
+    'B': 1,
+    'C': 2,
+    'D': 3,
+    'E': 4,
+    'F': 5,
+    'G': 6,
+    'H': 7
+
+}
+
+
 def print_board(board):
     for row in board:
         print("".join(row))
+
 
 def build_board():
     board = []
@@ -19,8 +35,14 @@ def build_board():
 
         color ^= 1
 
-    print_board(board)
+    return board
 
+
+def update_board(board, move):
+    piece, column, row = tuple(move)
+    _board = copy.deepcopy(board)
+    _board[int(row)][BOARD_COORDS[column]] = piece
+    return _board
 
 
 def main():
@@ -36,6 +58,11 @@ def main():
         ["wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"],
     ]
 
-    build_board()
+    print_board(build_board())
+
+    play = input("What is your play:\n")
+
+    print_board(update_board(build_board(), (play.split(','))))
+
 
 main()
