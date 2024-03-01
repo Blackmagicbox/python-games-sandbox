@@ -61,8 +61,10 @@ def main():
     print_board(build_board())
 
     play = input("What is your play:\n")
-
-    print_board(update_board(build_board(), (play.split(','))))
+    while play != "exit":
+        print_board(update_board(build_board(), (play.split(','))))
+        print("\n")
+        play = input("What is your play:\n")
 
 
 main()
